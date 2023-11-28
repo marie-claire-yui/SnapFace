@@ -1,0 +1,29 @@
+<!-- <p>face-snap works!</p> -->
+
+
+<!-- DATA BINDING -->
+<!-- transmission des informations du typescript vers le template -->
+
+
+
+<div class="face-snap-card">
+<!-- STRING INTERPOLATION -->
+<h2>{{ faceSnap.title }}</h2>
+<p>Mis en ligne le {{ faceSnap.createdDate }}</p>
+<p>{{ faceSnap.description }}</p>
+<!-- directive de type *ngIf pour dire à angular d'ajouter ou non des éléments au DOM selon la condition qu'on lui passe (si évalué à truthy ajout au DOM sinon falsy retiré du dom)-->
+<!-- bindings= { "ng-reflect-ng-if": "La  montagne" } on retrouve ceci dans l'inspecteur lorsque truthy -->
+<!-- bindings= { } on trouve ceci dans l'inpecteur lorsque évalué à falsey -->
+<p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p> 
+<p>
+<button (click)="onSnap()">{{ buttonText}}</button>
+🤌 {{ faceSnap.snaps }}</p>
+
+<!-- BINDING ATTRIBUTE -->
+<img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
+</div>
+
+<!-- EVENT BINDING liaison par évènement -->
+<!-- pour la dynamique c'est l'autre direction
+dinamyque qui vient du template vers le typscript -->
+<!-- lier des méthodes typescript à des évènements html -->
