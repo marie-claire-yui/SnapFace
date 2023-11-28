@@ -9,8 +9,11 @@
 <div class="face-snap-card" [ngClass]="{ snapped: buttonText === 'Oops, unSnap!'}">
 <!-- si je clique sur 'Oh Snap!' j'ai la classe qui s'applique et si je reclique dessus j'ai la classe qui s'enlève -->
     <!-- STRING INTERPOLATION -->
-<h2>{{ faceSnap.title }}</h2>
-<p>Mis en ligne le {{ faceSnap.createdDate }}</p>
+    <p>{{ 4346234.36 | number: '1.0-0' }}</p>
+    <p>{{ 0.336 | percent: '1.0-1' }}</p>
+    <p>{{ 344.36 | currency: 'EUR' : 'code' }}</p> 
+<h2>{{ faceSnap.title | titlecase }}</h2>
+<p>Mis en ligne le {{ faceSnap.createdDate | date: 'longDate'}}</p>
 <p>{{ faceSnap.description }}</p>
 <!-- directive de type *ngIf pour dire à angular d'ajouter ou non des éléments au DOM selon la condition qu'on lui passe (si évalué à truthy ajout au DOM sinon falsy retiré du dom)-->
 <!-- bindings= { "ng-reflect-ng-if": "La  montagne" } on retrouve ceci dans l'inspecteur lorsque truthy -->
@@ -32,3 +35,13 @@
 <!-- pour la dynamique c'est l'autre direction
 dinamyque qui vient du template vers le typscript -->
 <!-- lier des méthodes typescript à des évènements html -->
+
+
+<!-- les pipes -->
+<!-- s'utilisent dans les strings interpolations -->
+<!-- formatage d'affichage sans modifier les données sous-jacente -->
+<!-- titlecase n'est pas un pipe configurable -->
+<!-- date est un pipe configurable, pour configurer un pipe : puis chaine de caractères qui définit la configuration -->
+<!-- decimal pipe, configurable nombre de chiffre avant la virgule . nombre de chiffre minimum après la virgule à max number -->
+<!-- percent pipre, percent, arroundi par défaut à l'entier le proche, configurable comme décimal pipe -->
+<!-- currency pipe, par défaut dollar américain, configurable : pour chaque argument supplémentaire -->

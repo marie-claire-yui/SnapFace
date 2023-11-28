@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, LOCALE_ID, Inject } from '@angular/core'; // pour mettre la date en fr ajout de LOCALE_ID, Inject
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FaceSnapComponent } from './face-snap/face-snap.component';
 import { FaceSnap } from './models/face-snap.models';
-
+import {registerLocaleData} from '@angular/common'; // pour mettre la date en fr
+import * as fr from '@angular/common/locales/fr'; // pour mettre la date en fr
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -13,6 +14,9 @@ import { FaceSnap } from './models/face-snap.models';
 })
 export class AppComponent implements OnInit {
 
+  constructor(@Inject(LOCALE_ID) private locale: string) { // pour mettre la date en fr
+    registerLocaleData(fr.default, locale);
+  }
 
 faceSnaps!: FaceSnap[];
 // mySnap!: FaceSnap;
