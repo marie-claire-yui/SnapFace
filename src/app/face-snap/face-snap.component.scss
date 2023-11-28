@@ -36,3 +36,22 @@
 // donc ne s'applique pas à ses parents ou à ses enfants
 
 // exception pour le fichier styles.scss
+
+
+
+
+
+// classe dont on voudrait qu'elle s'applique ou non selon une condition
+// comportement rendu possible par l'utilisation de la directive [ngClass] au niveau du template dans la balise d'intérêt
+
+.snapped {
+  background-color: rgba(lightgreen, 0.4);
+  color: darkgreen;
+  button {
+    box-shadow: lightgreen 3px 3px 7px;
+    color: darkgreen;
+    &:active {
+      box-shadow: lightgreen 0 0 5px;
+    }
+  }
+}

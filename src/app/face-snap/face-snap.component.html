@@ -4,10 +4,11 @@
 <!-- DATA BINDING -->
 <!-- transmission des informations du typescript vers le template -->
 
-
-
-<div class="face-snap-card">
-<!-- STRING INTERPOLATION -->
+<!-- <div [ngClass]="{ 'class-name': condition }"></div> -->
+<!-- Comportement de classe dynamique en utilisant [ngClass] en passant le nom de la classe (clé) et la condition (valeur) selon laquelle la classe doit être appliquée -->
+<div class="face-snap-card" [ngClass]="{ snapped: buttonText === 'Oops, unSnap!'}">
+<!-- si je clique sur 'Oh Snap!' j'ai la classe qui s'applique et si je reclique dessus j'ai la classe qui s'enlève -->
+    <!-- STRING INTERPOLATION -->
 <h2>{{ faceSnap.title }}</h2>
 <p>Mis en ligne le {{ faceSnap.createdDate }}</p>
 <p>{{ faceSnap.description }}</p>
